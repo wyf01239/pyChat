@@ -2,14 +2,15 @@ from encodings import utf_8
 utf_8
 import os
 from modules import wgetChar
+# from menu import SingleChat
 
 os.system("title pyChat v0.1 by wyf9 2023.3.18")
 
-print ("cmdChat Main Menu")
+print ("pyChat Main Menu")
 print ("a / 1. Start a Server")
 print ("b / 2. Join a Server")
 print ("c / 3. Single Chat")
-print ("q / 0. Quit")
+print ("q / e / 0. Quit")
 print ("\n")
 
 while True: 
@@ -19,19 +20,19 @@ while True:
 
 		case "a" | "1":
 			print ("Server Mode Not Available.")
-			print ("\n")
 
 		case "b" | "2":
 			print ("Console Mode Not Available.")
-			print ("\n")
 
 		case "c" | "3":
+			print ("================================")
 			print ("Single Chat Mode")
-			print ("\n")
+# 			SingleChat.wMain()
+			print ("================================")
 
-		case "q" | "0":
+		case "q" | "0" | "e":
+			print ("================================")
 			print ("Quitting Program...")
-			print ("\n")
 			break
 
 os.system("title    ")
