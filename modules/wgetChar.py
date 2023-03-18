@@ -1,3 +1,5 @@
+from encodings import utf_8
+utf_8
 import os
 
 if os.name == 'nt':
@@ -16,8 +18,10 @@ else:
             termios.tcsetattr(fd, termios.TCSADRAIN, old_settings)
         return ch
 
-wgch = getch()
-try:
-	os.system("wapiBack.bat " + str(wgch))
-except ValueError:
-     os.system("wapiBack.bat " + "null")
+def wMain():
+	wgch = getch()
+	try:
+		wgch2 = str(wgch)
+	except ValueError:
+		wgch2 = "null"
+	return wgch2
