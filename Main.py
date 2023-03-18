@@ -3,7 +3,7 @@ utf_8
 import os
 from modules import wgetChar
 
-os.system("title cmdChat v0.1 by wyf9 2023.3.18")
+os.system("title pyChat v0.1 by wyf9 2023.3.18")
 
 print ("cmdChat Main Menu")
 print ("a / 1. Start a Server")
