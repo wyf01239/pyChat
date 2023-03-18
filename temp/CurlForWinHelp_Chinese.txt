@@ -1,0 +1,494 @@
+>卷曲——帮助所有人
+
+用法：curl[选项…]<网址>
+
+--抽象unix套接字＜path＞通过抽象unix域套接字连接
+
+--alt svc＜文件名＞使用此缓存文件启用alt svc
+
+--anyauth选择任何身份验证方法
+
+-a、 --上传时追加到目标文件
+
+--aws-sigv4＜provider1[：provider2[：region[：service]]>使用aws V4签名验证
+
+--基本使用HTTP基本身份验证
+
+--用于验证对等方的cacert＜file＞CA证书
+
+--capath＜dir＞CA目录以验证对等
+
+-E、 --cert
+
+--证书状态通过OCSP装订验证服务器证书的状态
+
+--证书类型＜类型＞证书类型（DER/PEM/ENG/P12）
+
+--密码＜密码列表＞要使用的SSL密码
+
+--压缩请求压缩响应
+
+--压缩ssh启用ssh压缩
+
+-K、 --config＜file＞从文件中读取配置
+
+--连接超时＜小数秒＞允许连接的最长时间
+
+--连接到连接到主机
+
+-C、 --在继续传输偏移量
+
+-b、 --cookie＜data|filename＞从字符串/文件发送cookie
+
+-c、 --cookie jar＜filename＞操作后将cookie写入＜filename＞
+
+--创建目录创建必要的本地目录层次结构
+
+--创建文件模式＜mode＞创建文件的文件模式
+
+--crlf上传时将LF转换为crlf
+
+--crlfile＜file＞使用此CRL列表
+
+--曲线＜算法列表＞（EC）要请求的TLS密钥交换算法
+
+-d、 --data＜data＞HTTP POST数据
+
+--数据ascii＜data＞HTTP POST ascii数据
+
+--数据二进制＜data＞HTTP POST二进制数据
+
+--data raw＜data＞HTTP POST数据，允许“@”
+
+--数据URL编码＜数据＞HTTP POST数据URL编码
+
+--delegation＜LEVEL＞GSS-API委托权限
+
+--摘要使用HTTP摘要身份验证
+
+-q、 --禁用禁用。curlrc公司
+
+--使用eprt或LPRT禁用eprt抑制
+
+--使用epsv禁用epsv抑制
+
+--不允许在url中使用用户名不允许在url中使用用户名
+
+--dns接口＜interface＞用于dns请求的接口
+
+--dns-ipv4-addr＜address＞用于dns请求的ipv4地址
+
+--dns-ipv6-addr＜address＞用于dns请求的ipv6地址
+
+--dns服务器＜addresses＞要使用的dns服务器地址
+
+--doh cert status通过OCSP staple验证doh服务器证书的状态--doh unsecurity允许不安全的doh服务器连接
+
+--doh-url＜url＞通过doh解析主机名
+
+-D、 --转储标头＜filename＞将接收到的标头写入＜filename＞
+
+--egd文件＜file＞随机数据的egd套接字路径
+
+--engine＜name＞要使用的加密引擎
+
+--etag-compare＜file＞将文件中的etag作为自定义标头传递
+
+--etag-save＜file＞从请求中解析etag并将其保存到文件
+
+--expect100 timeout＜seconds＞等待100需要多长时间继续
+
+-f、 --失败快速失败，HTTP错误没有输出
+
+--提前失败第一次传输失败错误，不要继续
+
+--失败，带正文失败，但保存正文
+
+--错误启动启用TLS错误启动
+
+-F、 --form＜name＝content＞指定多部分MIME数据
+
+--表单转义使用反斜杠转义多部分表单字段/文件名
+
+--form string＜name＝string＞指定多部分MIME数据
+
+--ftp帐户＜data＞帐户数据字符串
+
+--ftp替代用户＜command＞字符串来替换user〔name〕
+
+--ftp创建目录如果不存在，则创建远程目录
+
+--ftp方法＜method＞控制CWD的使用
+
+--ftp pasv使用pasv/EPSV而不是PORT
+
+-P、 --ftp端口＜address＞使用port而不是PASV
+
+--ftp pret在PASV之前发送pret
+
+--ftp跳过pasv ip跳过pasv的ip地址
+
+--ftp ssl ccc验证后发送ccc
+
+--ftp ssl ccc模式＜主动/被动＞设置ccc模式
+
+--ftp ssl控制ftp登录需要ssl/TLS，传输清除
+
+-G、 --get将帖子数据放入URL并使用get
+
+-g、 --globoff使用｛｝和[]禁用URL序列和范围
+
+--快乐眼球超时ms<毫秒>尝试IPv4之前IPv6的时间
+
+--haproxy协议发送haproxy PROXY协议v1头
+
+-一、 --head仅显示文档信息
+
+-H、 --标头
+将自定义标头传递到服务器
+
+-h、 --help获取命令帮助
+
+--hostpubmd5主机公钥的可接受md5哈希
+
+--hostpubsha256＜sha256＞主机公钥的可接受sha256哈希
+
+--hsts＜file name＞使用此缓存文件启用hsts
+
+--http0。9允许HTTP 0.9响应
+
+-0，--http1。0使用HTTP 1.0
+
+--http1。1使用HTTP 1.1
+
+--http2使用HTTP 2
+
+--http2先验知识使用不带HTTP/1.1的HTTP 2升级
+
+--http3使用HTTP v3
+
+--忽略内容长度忽略远程资源的大小
+
+-i、 --include在输出中包含协议响应标头
+
+-k、 --不安全允许不安全的服务器连接
+
+--接口＜name＞使用网络接口（或地址）
+
+-4，--ipv4将名称解析为ipv4地址
+
+-6，--ipv6将名称解析为ipv6地址
+
+--json＜data＞HTTP POST json
+
+-j、 --垃圾邮件会话cookie忽略从文件读取的会话cookie
+
+--保活时间＜秒＞保活探测的间隔时间
+
+--key＜key＞私钥文件名
+
+--密钥类型＜type＞私钥文件类型（DER/PEM/ENG）
+
+--krb＜level＞启用具有安全性的Kerberos＜level＞
+
+--libcurl＜file＞转储此命令行的libcurl等效代码
+
+--限制速率＜速度＞将传输速度限制为rate
+
+-l、 --仅列表仅列表模式
+
+--本地端口强制使用range作为本地端口号
+
+-五十、 --位置跟踪重定向
+
+--location trusted Like--位置，并向其他主机发送身份验证
+
+--登录选项＜选项＞服务器登录选项
+
+--邮件身份验证＜address＞原始电子邮件的发件人地址
+
+--来自
+的邮件来自此地址的邮件
+
+--mail rcpt＜address＞将邮件发送到此地址
+
+--mail rcpt allowfails允许某些收件人的rcpt TO命令失败
+
+-M、 --manual显示完整的手册
+
+--最大文件大小＜字节＞要下载的最大文件大小
+
+--最大重定向次数＜num＞允许的最大重定向次数
+
+-m、 --最长时间<分数秒>允许传输的最长时间
+
+--metalink将给定的URL处理为metalink XML文件
+
+--协商使用HTTP协商（SPNEGO）身份验证
+
+-n、 ——netrc必读。用户名和密码的netrc
+
+--netrc文件＜filename＞为netrc指定file
+
+--netrc可选使用任一选项。netrc或URL
+
+-：，--next使下一个URL使用其单独的选项集
+
+--no alpn禁用alpn TLS扩展
+
+-N、 --无缓冲区禁用输出流的缓冲
+
+--无clobber不覆盖已存在的文件
+
+--no keepalive禁用连接上的TCP keepalive
+
+--no npn禁用npn TLS扩展
+
+--没有进度表不显示进度表
+
+--无会话ID禁用SSL会话ID重用
+
+--noproxy＜无代理列表＞不使用代理的主机列表
+
+--ntlm使用HTTP ntlm身份验证
+
+--ntlm wb将HTTP ntlm身份验证与winbind一起使用
+
+--oauth2承载＜token＞oauth2承载令牌
+
+-o、 --output＜file＞写入文件而不是stdout
+
+--output dir＜dir＞保存文件的目录
+
+-Z、 --parallel并行执行传输
+
+--并行立即不等待多路复用（带--parallel）
+
+--parallel max并行传输的最大并发性
+
+--pass＜phrase＞私钥的pass phrase
+
+--路径保持原样不要挤压。。URL路径中的序列
+
+--pinnedpubkey＜hashes＞FILE/hashes用于验证对等方的公钥
+
+--post301在301之后不要切换到GET
+
+--post302在302之后不要切换到GET
+
+--post303在303之后不要切换到GET
+
+--预代理[协议：//]主机[：端口]首先使用此代理
+
+-#，--进度条以条形显示传输进度
+
+--proto＜protocols＞启用/禁用protocols
+
+--proto-default＜protocol＞对任何缺少方案的URL使用protocol
+
+--proto-redir＜protocols＞在重定向时启用/禁用protocols
+
+-x、 --proxy[协议：//]主机[：端口]使用此代理
+
+--proxy-anyauth选择任何代理身份验证方法
+
+--proxy基本在代理上使用基本身份验证
+
+--proxy-cacert＜file＞用于验证对等方代理的CA证书
+
+--proxy capath＜dir＞CA目录，用于验证对等方的代理
+
+--proxy-cert＜cert[：passwd〕＞设置代理的客户端证书
+
+--代理证书类型＜type＞HTTPS代理的客户端证书类型
+
+--代理密码＜list＞用于代理的SSL密码
+
+--proxy crlfile＜file＞为代理设置CRL列表
+
+--代理摘要在代理上使用摘要式身份验证
+
+--代理标头
+将自定义标头传递给代理
+
+--代理不安全在不验证代理的情况下进行HTTPS代理连接
+
+--代理密钥＜key＞HTTPS代理的私钥
+
+--代理密钥类型＜type＞代理的私钥文件类型
+
+--代理协商在代理上使用HTTP协商（SPNEGO）身份验证
+
+--proxy ntlm在代理上使用ntlm身份验证
+
+--proxy pass＜phrase＞HTTPS代理私钥的pass phrase
+
+--proxy-pinedpubkey＜hashes＞FILE/hashes公钥，用于验证代理
+
+--代理服务名称＜name＞SPNEGO代理服务名称
+
+--proxy ssl allow beast允许HTTPS代理的互操作存在安全漏洞
+
+--proxy-ssl自动客户端证书使用代理的自动客户端证书（Schannel）--proxy-tls13-密码＜密码套件列表＞TLS 1.3代理密码套件
+
+--proxy tlsauthtype＜type＞HTTPS代理的TLS身份验证类型
+
+--proxy tlspassword＜string＞HTTPS代理的TLS密码
+
+--proxy-tlsuser＜name＞HTTPS代理的TLS用户名
+
+--proxy-tlsv1将tlsv1用于HTTPS代理
+
+-U、 --代理用户＜user:password＞代理用户和密码
+
+--代理1。0在给定端口上使用HTTP/1.0代理
+
+-p、 --proxytunnel通过HTTP代理隧道进行操作（使用CONNECT）
+
+--pubkey＜key＞SSH公钥文件名
+
+-Q、 --quote＜command＞在传输之前将命令发送到服务器
+
+--随机文件＜file＞用于从中读取随机数据的文件
+
+-r、 --range＜range＞仅检索range内的字节
+
+--raw Do HTTP“原始”；无传输解码
+
+-e、 --Referrer＜URL＞Referrer URL
+
+-J、 --远程标头名称使用标头提供的文件名
+
+-O、 --remote name将输出写入名为远程文件的文件
+
+--remote name all对所有URL使用远程文件名
+
+-R、 --remote time在本地输出上设置远程文件的时间
+
+--出错时删除出错时删除输出文件
+
+-十、 --request＜method＞指定要使用的请求方法
+
+--request target＜path＞指定此请求的目标
+
+--解析<[+]主机：端口：addr[，addr]…>将主机+端口解析到此地址--如果出现暂时性问题，请重试重试请求
+
+--重试所有错误重试所有错误（与--retry一起使用）
+
+--重试连接被拒绝在连接被拒绝时重试（与--retry一起使用）
+
+--重试延迟<秒>重试之间的等待时间
+
+--重试最长时间＜秒＞仅在此时间段内重试
+
+--sasl-authzid＜identity＞sasl PLAIN身份验证的标识
+
+--sasl-ir在sasl身份验证中启用初始响应
+
+--服务名称＜name＞SPNEGO服务名称
+
+-S、 --show error即使使用-S也显示错误
+
+-s、 --静音静音模式
+
+--给定主机+端口上的socks4socks4代理
+
+--给定主机+端口上的socks4a代理
+
+--给定主机+端口上的socks5socks5代理
+
+--socks5 basic为socks5代理启用用户名/密码身份验证
+
+--socks5 gssapi为socks5代理启用GSS-API身份验证
+
+--socks5 gssapi-nec与nec socks5服务器的兼容性
+
+--socks5 gssapi服务＜name＞用于GSS-API的socks5代理服务名称
+
+--socks5主机名＜host[：port]>socks5代理，将主机名传递给代理
+
+-Y、 --速度限制停止传输速度慢于此
+
+-y、 --速度时间<秒>在此时间后触发“速度限制”中止
+
+--ssl尝试ssl/TLS
+
+--ssl allow beast允许安全漏洞改进互操作
+
+--ssl自动客户端证书使用自动客户端证书（Schannel）
+
+--ssl无吊销禁用证书吊销检查（Schannel）
+
+--ssl请求需要ssl/TLS
+
+--ssl撤销尽力而为忽略丢失/脱机证书CRL dist点
+
+-2，--sslv2使用sslv2
+
+-3，--sslv3使用sslv3
+
+--stderr＜file＞将stderr重定向到何处
+
+--样式化输出为HTTP标头启用样式化输出
+
+--抑制连接标头抑制代理connect响应标头
+
+--tcp快速打开使用tcp快速打开
+
+--tcp nodelay使用tcp_nodelay选项
+
+-t、 --telnet选项设置telnet选项
+
+--tftp blksize＜value＞设置tftp blksize选项
+
+--tftp无选项不发送任何tftp选项
+
+-z、 --time cond＜time＞基于时间条件的传输
+
+--tls max＜VERSION＞设置允许的最大tls版本
+
+--tls13密码＜密码套件列表＞要使用的TLS 1.3密码套件
+
+--tlsauthtype＜type＞TLS身份验证类型
+
+--tlspassword＜string＞TLS密码
+
+--tlsuser＜name＞TLS用户名
+
+-1，--tlsv1使用tlsv1。0或更大
+
+--tlsv1。0使用TLSv1。0或更大
+
+--tlsv1。1使用TLSv1。1或更大
+
+--tlsv1。2使用TLSv1。2或更大
+
+--tlsv1。3使用TLSv1。3或以上
+
+--tr编码请求压缩传输编码
+
+--trace＜file＞将调试跟踪写入file
+
+--trace ascii＜file＞类似于--trace，但没有十六进制输出
+
+--跟踪时间为跟踪/详细输出添加时间戳
+
+--unix套接字＜path＞通过这个unix域套接字连接
+
+-T、 --上传文件＜file＞将本地file传输到目标
+
+--url＜url＞要使用的url
+
+-B、 --使用ascii使用ascii/文本传输
+
+-u、 --user＜user:password＞服务器用户和密码
+
+-A、 --用户代理将用户代理
+
+-v、 --verbose使操作更健谈
+
+-五、 --version显示版本号并退出
+
+-w、 --写出＜format＞完成后使用输出format
+
+--xattr将元数据存储在扩展文件属性中
