@@ -5,7 +5,10 @@ import os
 if os.name == 'nt':
     import msvcrt
     def getch():
-        return msvcrt.getch().decode()
+        try:
+            return msvcrt.getch().decode()
+        except:
+            return "null"
 else:
     import sys, tty, termios
     fd = sys.stdin.fileno()
