@@ -62,7 +62,7 @@ def wMain():
             ws_addr = ws_data[1]
             ws_addr1 = ws_addr[0]
             ws_addr2 = ws_addr[1]
-            if not int(ws_addr2) == wBport:
+            if not int(ws_addr2) == wBport & str(ws_addr1):
                 print("Blocked a Guest Message from " + str(ws_addr1) + ":" + str(ws_addr2))
             else:
                 nt0 = datetime.datetime.now()
