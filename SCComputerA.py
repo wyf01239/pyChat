@@ -4,7 +4,7 @@ import socket
 import os
 import datetime
 import _thread
-import wAPIgetChar
+from wAPIgetChar import wMain as wAPIgetChar
 
 ws = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 

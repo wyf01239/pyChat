@@ -9,8 +9,4 @@ SN=random.random(1,Over)
 
 #判定
 while int(UN) < int(SN):
-  print('666')
-  input('按回车可以继续  :]')
-  print(':(((((((((')
-  print(SN + '才是对的')
-  input('按回车重试')
+  UN=input('数字小了/n')

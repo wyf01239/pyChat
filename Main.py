@@ -1,7 +1,7 @@
 from encodings import utf_8
 utf_8
 import os
-import wAPIgetChar
+from wAPIgetChar import wMain as wAPIgetChar
 import SingleChat
 
 os.system("title pyChat v0.1 by wyf9 2023.3.18")
