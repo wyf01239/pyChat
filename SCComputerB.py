@@ -1,7 +1,7 @@
 from encodings import utf_8
 utf_8
 import socket
-from Sources import wAPIgetChar
+import wAPIgetChar
 
 def wMain():
 	print ("Your HostName: " + socket.gethostname())
