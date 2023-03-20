@@ -1,8 +1,9 @@
 from encodings import utf_8
 utf_8
 import os
-from wAPIgetChar import wMain as wAPIgetChar
+import wAPIgetChar
 import SingleChat
+import LG
 
 os.system("title pyChat v0.1 by wyf9 2023.3.18")
 
@@ -10,6 +11,7 @@ print ("pyChat Main Menu")
 print ("a / 1. Start a Server")
 print ("b / 2. Join a Server")
 print ("c / 3. Single Chat")
+print ("g / 9. Little Game??")
 print ("q / e / 0. Quit")
 print ("\n")
 
@@ -28,6 +30,11 @@ while True:
 			print ("================================")
 			print ("Single Chat Mode")
 			SingleChat.wMain()
+			print ("================================")
+
+		case "g" | "9":
+			print ("================================")
+			LG.wMain()
 			print ("================================")
 
 		case "q" | "0" | "e":

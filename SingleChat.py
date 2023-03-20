@@ -1,9 +1,9 @@
 from encodings import utf_8
 utf_8
 import os
-from wAPIgetChar import wMain as wAPIgetChar
-from SCComputerA import wMain as SCComputerA
-from SCComputerB import wMain as SCComputerB
+import wAPIgetChar
+import SCComputerA
+import SCComputerB
 
 def wMain():
 	os.system ("title pyChat v0.1 by wyf9 2023.3.19 - Single Chat")
