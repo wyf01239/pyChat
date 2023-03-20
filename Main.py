@@ -3,6 +3,7 @@ utf_8
 import os
 from Sources import wAPIgetChar
 from Sources import SingleChat
+from Sources import LG
 
 os.system("title pyChat v0.1 by wyf9 2023.3.18")
 
