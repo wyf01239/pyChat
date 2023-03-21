@@ -5,10 +5,14 @@ import os
 import datetime
 import _thread
 from Sources import wAPIgetChar
+import Main
 
 ws = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 
 def wMain():
+    _thread.start_new_thread(wMain114)
+
+def wMain114():
     os.system ("title pyChat v0.1 by wyf9 2023.3.19 - Single Chat - Computer A")
     print ("Your HostName: " + socket.gethostname())
     whostip = socket.gethostbyname(socket.gethostname())
@@ -80,8 +84,15 @@ def wMain():
     return 0
 
 
-def wDef(wArgs):
-    if not wArgs[0] == "launch":
+def wDef(wArgs1, wArgs2, wArgs3):
+    if not wArgs1 == "launch":
         return 0
-    print(str(wArgs[1]) + " - " + str(wArgs[2]))
+    print(str(wArgs2) + " - " + str(wArgs3))
+    
+    print ("Press q to Stop Lsten.")
+    q = wAPIgetChar.wMain()
+    if str(q) == "q":
+        _thread.exit(wMain114)
+        wMain()
+        exit
     return 0
