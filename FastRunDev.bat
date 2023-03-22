@@ -11,5 +11,10 @@ if "%1" == "/w" (
     pause>nul
     exit
 ) else (
-    start %0 /w Main.py /p d:\wyf9\python311\python.exe
+    if %computername% == null (
+        set wpypath = d:\wyf9\python311\python.exe
+        ) else (
+            set wpypath = python
+        )
+    start %0 /w Main.py /p %wpypath%
 )
