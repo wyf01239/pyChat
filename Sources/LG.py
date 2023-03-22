@@ -67,7 +67,7 @@ def wMain():
                 return 0
         elif int(UN) == int(SN):
             Att = Att + 1
-            UN=input('NOICE你猜对了! 数字就是: ' + str(SN) +  '\n你猜了: ' + str(Att) + '次！\n按回车继续...')
+            UN=input('NICE! 你猜对了! 数字就是: ' + str(SN) +  '\n你猜了' + str(Att) + '次！\n按回车继续...')
             go = False
             break
         else:
