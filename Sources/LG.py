@@ -27,11 +27,11 @@ def wMain():
                 w114514.wMain()
             print("ERROR: 数字太小了, 请重新输入。")
 
-    SN=random.randint(1, int(Over))
-
     go = True
-    UN = "0"
+    UN = 0
     Att = 0
+    SN=random.randint(1, int(Over))
+    
     # 判定
     
     while go == True:
@@ -67,7 +67,7 @@ def wMain():
                 return 0
         elif int(UN) == int(SN):
             Att = Att + 1
-            UN=input('你猜对了! 数字就是: ' + str(SN) +  '\n你猜了: ' + str(Att) + '次！\n按回车继续...')
+            UN=input('NOICE你猜对了! 数字就是: ' + str(SN) +  '\n你猜了: ' + str(Att) + '次！\n按回车继续...')
             go = False
             break
         else:
@@ -77,3 +77,4 @@ def wMain():
             break
     return 0
 # √  :)
+# ( ͡° ͜ʖ ͡°)
