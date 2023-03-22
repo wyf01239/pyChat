@@ -4,15 +4,13 @@ import socket
 import os
 import datetime
 import _thread
+from time import sleep
 from Sources import wAPIgetChar
 import Main
 
 ws = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 
 def wMain():
-    _thread.start_new_thread(wMain114)
-
-def wMain114():
     os.system ("title pyChat v0.1 by wyf9 2023.3.19 - Single Chat - Computer A")
     print ("Your HostName: " + socket.gethostname())
     whostip = socket.gethostbyname(socket.gethostname())
@@ -43,7 +41,9 @@ def wMain114():
     else:
         print ("Starting Listen...")
     wthArgs = ("launch", wBhost, wBport)
-    _thread.start_new_thread(wDef, wthArgs)
+    _thread.start_new_thread(wSend, wthArgs)
+    wGetArgs = (whostip, wport, wBport)
+    _thread.start_new_thread(wGet, wGetArgs)
     os.system ("title pyChat v0.1 by wyf9 2023.3.19 - Single Chat - Computer A - Get")
     wsbind = whostip, wport
     ws.bind(wsbind)
@@ -84,15 +84,56 @@ def wMain114():
     return 0
 
 
-def wDef(wArgs1, wArgs2, wArgs3):
+def wSend(wArgs1, wArgs2, wArgs3):
+    sleep(1)
     if not wArgs1 == "launch":
         return 0
     print(str(wArgs2) + " - " + str(wArgs3))
     
-    print ("Press q to Stop Lsten.")
-    q = wAPIgetChar.wMain()
-    if str(q) == "q":
-        _thread.exit(wMain114)
-        wMain()
-        exit
+    print ("Input /q to Stop Lsten.")
+    while True:
+        try:
+            q = input(": ")
+        except:
+            print("Ctrl + C\nQuitting Program...")
+    
+    return 0
+
+def wGet(whostip, wport, wBport):
+    wsbind = whostip, wport
+    ws.bind(wsbind)
+    wsw = True
+    print ("Listening Host '" + whostip + "' Port '" + str(wport) + "' ...")
+    print ("++++++++++++++++++++++++++++++++")
+    while wsw:
+        try:
+            ws_data = ws.recvfrom(10240)
+            wstl = False
+        except OSError:
+            wstl = True
+        if wstl:
+            print("ERROR: Message too Long! Max type is 10240.")
+            if os.name == "nt":
+                print ("[OSError WinError 10040]:")
+                os.system("net helpmsg 10040")
+        else:
+            ws_msg = ws_data[0]
+            ws_addr = ws_data[1]
+            ws_addr1 = ws_addr[0]
+            ws_addr2 = ws_addr[1]
+            if not int(ws_addr2) == wBport & str(ws_addr1):
+                print("Blocked a Guest Message from " + str(ws_addr1) + ":" + str(ws_addr2))
+            else:
+                nt0 = datetime.datetime.now()
+                nowtime = nt0.strftime('%Y/%m/%d %H:%M:%S')
+                if ws_msg.decode("utf_8") == "/q":
+                    wsw = False
+                    print (nowtime + " - " + str(ws_addr1) + ":" + 
+                    str(ws_addr2) + " : " + ws_msg.decode("utf_8"))
+                    print("Connect Closed.")
+                    ws.close()
+                    break
+                else:
+                    print (nowtime + " - " + str(ws_addr1) + ":" + 
+                    str(ws_addr2) + " : " + ws_msg.decode("utf_8"))
     return 0

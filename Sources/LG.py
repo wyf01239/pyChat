@@ -8,7 +8,7 @@ def wMain():
     Over = 0
     a114 = 0
     print("输入 /q 结束游戏")
-    while int(Over) < 15:
+    while int(Over) < 16:
         Over=input('输入最高值 (大于 15 的整数): ')
         if Over == "/q":
             print ("已退出游戏。")
@@ -20,7 +20,7 @@ def wMain():
             print("ERROR: 非法的数字 - NaN\n请重新输入。")
             Over = 0
             continue
-        if int(Over) < 15:
+        if int(Over) < 16:
             print('你就真心不按照提示来输入吗？！！！！')
             a114 = a114 + 1
             if a114 > 4:
