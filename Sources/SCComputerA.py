@@ -7,7 +7,6 @@ import _thread
 import threading
 from time import sleep
 from Sources import wAPIgetChar
-import Main
 
 ws = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 wl = threading.Lock()
@@ -18,7 +17,8 @@ def wMain():
     global wBhostip
     global wBport
     global wport
-    global wsbind
+    global wsbindGet
+    global wsbindSend
     global mainexit
     mainexit = 0
     
@@ -57,7 +57,8 @@ def wMain():
         return 0
     else:
         print ("Starting Listen...")
-    wsbind = whostip, wport
+    wsbindGet = whostip, wport
+    wsbindSend = wBhostip, wBport
     wthArgs = ("launch", "114514")
     _thread.start_new_thread(wSend, wthArgs)
     _thread.start_new_thread(wGet, wthArgs)
@@ -69,11 +70,7 @@ def wMain():
 
 def wSend(wArgs1, wArgs2):
     sleep(1)
-    if not wArgs1 == "launch":
-        return 0
-    wl.acquire()
     print("Allowed Partner host: " + str(wBhost) + " - IP: " + str(wBhostip) + " - Port: " + str(wBport) + ".")
-    wl.release()
     
     print ("Input /q to Stop Listen.")
     while True:
@@ -98,7 +95,7 @@ def wSend(wArgs1, wArgs2):
     return 0
 
 def wGet(wArgs1, wArgs2):
-    ws.bind(wsbind)
+    ws.bind(wsbindGet)
     wsw = True
     print ("Listening Host '" + whostip + "' Port '" + str(wport) + "' ...")
     print ("++++++++++++++++++++++++++++++++")
