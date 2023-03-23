@@ -4,6 +4,7 @@ import os
 from Sources import wAPIgetChar
 from Sources import SingleChat
 from Sources import LG
+from Sources import Hallo
 
 def pyChat():
     
@@ -51,6 +52,9 @@ def pyChat():
                 print ("================================")
                 print ("Quitting Program...")
                 break
+            
+            case "w" | " " | "h":
+                Hallo.wMain()
 
     os.system("title       ")
     return 0
