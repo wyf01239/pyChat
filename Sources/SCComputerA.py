@@ -20,6 +20,7 @@ def wMain():
     global wsbindGet
     global wsbindSend
     global mainexit
+    global wthArgs
     mainexit = 0
     
     os.system ("title pyChat v0.1 by wyf9 2023.3.19 - Single Chat - Computer A")
@@ -70,6 +71,7 @@ def wMain():
 
 def wSend(wArgs1, wArgs2):
     sleep(1)
+    p_addr = (wBhostip, wBport)
     print("Allowed Partner host: " + str(wBhost) + " - IP: " + str(wBhostip) + " - Port: " + str(wBport) + ".")
     
     print ("Input /q to Stop Listen.")
@@ -78,13 +80,20 @@ def wSend(wArgs1, wArgs2):
             q0 = wAPIgetChar.wMain()
             if q0 == "null":
                 q0 = ""
-            q1 = input("> " + q0)
+                global wchr
+            wchr = q0
+            _thread.start_new_thread(wInput, wthArgs)
+            q1 = input("> ")
             q = q0 + q1
             if q == "/q":
                 mainexit = 1
                 break
-            print("")
-        except:
+            qw = bytes(q, 'utf-8')
+            ws.sendto(qw, p_addr)
+            nt0 = datetime.datetime.now()
+            nowtime = nt0.strftime('%Y/%m/%d %H:%M:%S')
+            print (nowtime + " - You : " + q)
+        except KeyboardInterrupt:
             print("Ctrl + C\nQuitting Program...")
             wl.acquire()
             mainexit = 1
@@ -106,10 +115,7 @@ def wGet(wArgs1, wArgs2):
         except OSError:
             wstl = True
         if wstl:
-            print("ERROR: Message too Long! Max type is 10240.")
-            if os.name == "nt":
-                print ("[OSError WinError 10040]:")
-                os.system("net helpmsg 10040")
+            print("Unknown Error")
         else:
             ws_msg = ws_data[0]
             ws_addr = ws_data[1]
@@ -130,4 +136,10 @@ def wGet(wArgs1, wArgs2):
                 else:
                     print (nowtime + " - " + str(ws_addr1) + ":" + 
                     str(ws_addr2) + " : " + ws_msg.decode("utf_8"))
+    return 0
+
+def wInput(wArgs1, wArgs2):
+    if os.name == "nt":
+        sleep(0.25)
+        os.system('mshta vbscript:CreateObject("Wscript.Shell").SendKeys("' + wchr + '")(window.close)')
     return 0
