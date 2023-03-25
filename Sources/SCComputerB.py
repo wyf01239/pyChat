@@ -19,8 +19,8 @@ def wMain():
     global wport
     global wsbindGet
     global wsbindSend
-    global mainexit
-    mainexit = 0
+    global wthArgs
+    global wExit
     
     os.system ("title pyChat v0.1 by wyf9 2023.3.19 - Single Chat - Computer A")
     print ("Your HostName: " + socket.gethostname())
@@ -32,7 +32,6 @@ def wMain():
         wBhostip = socket.gethostbyname(wBhost)
     except:
         print("Unknown host!")
-        mainexit = 1
         return 0
     wBport0 = input("Input Partner Port: 91__\n>>")
     try:
@@ -57,45 +56,65 @@ def wMain():
         return 0
     else:
         print ("Starting Listen...")
+    wExit = 0
     wsbindGet = whostip, wport
     wsbindSend = wBhostip, wBport
     wthArgs = ("launch", "114514")
     _thread.start_new_thread(wSend, wthArgs)
     _thread.start_new_thread(wGet, wthArgs)
     os.system ("title pyChat v0.1 by wyf9 2023.3.19 - Single Chat - Computer A")
-    while mainexit == 0:
-        pass
+    while True:
+        if wExit == 1:
+            input()
     return 0
 
 
 def wSend(wArgs1, wArgs2):
-    sleep(1)
+    sleep(0.5)
     p_addr = (wBhostip, wBport)
     print("Allowed Partner host: " + str(wBhost) + " - IP: " + str(wBhostip) + " - Port: " + str(wBport) + ".")
-    
-    print ("Input /q to Stop Listen.")
+    print ("Press any key to input.")
+    print ("Press q to Stop Listen.")
     while True:
         try:
             q0 = wAPIgetChar.wMain()
-            if q0 == "null":
-                q0 = ""
-            q1 = input("> " + q0)
-            q = q0 + q1
-            if q == "/q":
-                mainexit = 1
-                break
-            qw = bytes(q, 'utf-8')
-            ws.sendto(qw, p_addr)
-            nt0 = datetime.datetime.now()
-            nowtime = nt0.strftime('%Y/%m/%d %H:%M:%S')
-            print (nowtime + " - You : " + q)
+            match q0:
+                case "q":
+                    qw = bytes("/q", 'utf-8')
+                    ws.sendto(qw, p_addr)
+                    wExit = 1
+                    ws.close()
+                    print("Now you can quit.")
+                    while True:
+                        input()
+                case _:
+                    q = input("> ")
+                    if q == "/q":
+                        qw = bytes("/q", 'utf-8')
+                        ws.sendto(qw, p_addr)
+                        wExit = 1
+                        ws.close()
+                        print("Now you can quit.")
+                        while True:
+                            input()
+                    qw = bytes(q, 'utf-8')
+                    try:
+                        ws.sendto(qw, p_addr)
+                        nt0 = datetime.datetime.now()
+                        nowtime = nt0.strftime('%Y/%m/%d %H:%M:%S')
+                        print (nowtime + " - You : " + q)
+                    except OSError:
+                        if wExit == 1:
+                            while True:
+                                input()
+                        print ("Unknown Error.")
         except KeyboardInterrupt:
-            print("Ctrl + C\nQuitting Program...")
-            wl.acquire()
-            mainexit = 1
-            wl.release()
+            print("Ctrl + C")
+            wExit = 1
             ws.close()
-            exit()
+            print("Now you can quit.")
+            while True:
+                input()
     
     return 0
 
@@ -111,10 +130,11 @@ def wGet(wArgs1, wArgs2):
         except OSError:
             wstl = True
         if wstl:
-            print("ERROR: Message too Long! Max type is 10240.")
-            if os.name == "nt":
-                print ("[OSError WinError 10040]:")
-                os.system("net helpmsg 10040")
+            if wExit == 0:
+                print("Unknown Error")
+            else:
+                while True:
+                    input()
         else:
             ws_msg = ws_data[0]
             ws_addr = ws_data[1]
@@ -129,9 +149,12 @@ def wGet(wArgs1, wArgs2):
                     wsw = False
                     print (nowtime + " - " + str(ws_addr1) + ":" + 
                     str(ws_addr2) + " : " + ws_msg.decode("utf_8"))
-                    print("Connect Closed.")
+                    wExit = 1
                     ws.close()
-                    break
+                    print("Connect Closed.")
+                    print("Now you can quit.")
+                    while True:
+                        input()
                 else:
                     print (nowtime + " - " + str(ws_addr1) + ":" + 
                     str(ws_addr2) + " : " + ws_msg.decode("utf_8"))

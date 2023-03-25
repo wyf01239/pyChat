@@ -4,17 +4,9 @@ import os
 from Sources import wAPIgetChar
 from Sources import SingleChat
 from Sources import LG
-from Sources import Hallo
+from Sources import Hello
 
 def pyChat():
-    
-    try:
-        os.mkdir("data")
-    except FileExistsError:
-        pass
-    except:
-        print("ERROR: Create data Dir Failed.")
-        return 0
     
     os.system("title pyChat v0.1 by wyf9 2023.3.18")
     
@@ -54,7 +46,7 @@ def pyChat():
                 break
             
             case "w" | " " | "h":
-                Hallo.wMain()
+                Hello.wMain()
 
     os.system("title       ")
     return 0

@@ -1,5 +1,5 @@
 def wMain():
-    print('Hallo World!')
+    print('Hello World!')
 # ( ͡° ͜ʖ ͡°)
     return 0
 
