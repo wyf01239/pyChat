@@ -61,28 +61,24 @@ def CheckLib(wname, wfile, wurl):
     # wurl: str, 自定义安装文件下载地址
     try:
         import_module (wname)
-        wErr = False
     except:
         print("未安装库 " + wname + ", 正在启动安装")
-        try:
-            # 格式: "./xxx/xxx/xxx.tar.gz" or "./xxx/xxx/xxx.whl"
-            try:
-                os.system("python -m pip install " + wfile)
-            except:
-                wErr = True
-            print("成功安装库 " + wname)
-        except:
+        # 格式: "./xxx/xxx/xxx.tar.gz" or "./xxx/xxx/xxx.whl"
+        wret = os.system("python -m pip install " + wfile)
+        if wret != 0:
             wErr = True
-            if wErr == True:
-                print(wname + " 安装失败, 请自行安装库: https://pypi.org/project/" + wname + " 或 " + wurl)
-                return 1
-            else:
-                return 0
+        else:
+            print("成功安装库 " + wname)
+    if wErr == True:
+        print(wname + " 安装失败, 请自行安装库: https://pypi.org/project/" + wname + " 或 " + wurl)
+        return 1
+    else:
+        return 0
 
 if __name__ == "__main__":
-    if CheckLib("urwid_", "./Sources/lib/urwid212_.tar.gz", "https://wyf01239.github.io/webget/pyChat/lib/urwid212.tar.gz") != 0: exit(1)
+    if CheckLib("urwid", "./Sources/lib/urwid212.tar.gz", "https://wyf01239.github.io/webget/pyChat/lib/urwid212.tar.gz") != 0: exit(1)
     match sys.argv[1:]:
         case ["/Server"]:
             print ("OK")
         case _:
-            pass
+            pyChat()
